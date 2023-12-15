@@ -13,6 +13,7 @@ namespace Tickets
 {
     public partial class Reg : Form
     {
+        public int userID;
         string SQLconnect = "server = localhost; port=3306; userid=root; password=t9qd9jqs; database=train_tickets_sokolov; sslmode=none; charset=utf8 ";
         public Reg()
         {
@@ -46,7 +47,7 @@ namespace Tickets
             con.Close();
             MessageBox.Show("Реистрация успешна", "Успешно выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
-            Authorization authorization = new Authorization();
+            Authorization authorization = new Authorization(userID);
             this.Close();
             authorization.Show();
         }

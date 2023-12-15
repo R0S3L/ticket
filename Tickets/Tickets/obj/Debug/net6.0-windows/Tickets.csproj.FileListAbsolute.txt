@@ -43,3 +43,6 @@ C:\Users\Майя\source\repos\Tickets\Tickets\bin\Debug\net6.0-windows\runtimes
 C:\Users\Майя\source\repos\Tickets\Tickets\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\Майя\source\repos\Tickets\Tickets\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Майя\source\repos\Tickets\Tickets\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Майя\source\repos\Tickets\Tickets\obj\Debug\net6.0-windows\Tickets.YourTicket.resources
+C:\Users\Майя\source\repos\Tickets\Tickets\obj\Debug\net6.0-windows\Tickets.BuyTicket.resources
+C:\Users\Майя\source\repos\Tickets\Tickets\obj\Debug\net6.0-windows\Tickets.NewTicket.resources

@@ -10,11 +10,12 @@ namespace Tickets
 {
     public partial class Authorization : Form
     {
+        int userID;
         string SQLconnect = "server = localhost; port=3306; userid=root; password=t9qd9jqs; database=train_tickets_sokolov; sslmode=none; charset=utf8 ";
-
-        public Authorization()
+        public Authorization(int userID)
         {
             InitializeComponent();
+            this.userID = userID;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,18 +31,23 @@ namespace Tickets
             com.Parameters.AddWithValue("@login", textBox1.Text);
             com.Parameters.AddWithValue("@password", textBox2.Text);
             MySqlDataReader Dr = com.ExecuteReader();
-            if (Dr.HasRows == true)
-            {
-                Main main = new Main();
-                main.Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Такого логина или пароля не существует: \n\n1) Проверьте правильность ввода\n\n2) Обратитесь к администартору", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            while (Dr.Read())
+                if (Dr.HasRows == true)
+                {
+                    Main mn = new Main(Convert.ToInt32(Dr["iduser"]));
+                    con1.Close();
+                    Hide();
+                    mn.ShowDialog();
+                    Show();
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Такого логина или пароля не существует: \n\n1) Проверьте правильность ввода\n\n2) Обратитесь к администартору", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+                }
         }
+
         private void Enter_Adm()
         {
             MySqlConnection con1 = new MySqlConnection(SQLconnect);
@@ -55,7 +61,7 @@ namespace Tickets
             {
                 Adm_Main main = new Adm_Main();
                 main.Show();
-                Hide();
+                Close();
             }
             else
             {
@@ -78,6 +84,11 @@ namespace Tickets
             Reg rg = new Reg();
             this.Hide();
             rg.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

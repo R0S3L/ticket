@@ -2,6 +2,8 @@ namespace Tickets
 {
     internal static class Program
     {
+        static int vuserID;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -11,7 +13,7 @@ namespace Tickets
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Authorization());
+            Application.Run(new Authorization(vuserID));
         }
     }
 }

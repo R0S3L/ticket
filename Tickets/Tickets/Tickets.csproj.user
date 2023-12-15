@@ -7,10 +7,19 @@
     <Compile Update="Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BuyTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="NewTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Reg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="YourTicket.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

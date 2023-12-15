@@ -36,6 +36,7 @@
             textBox2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -111,11 +112,22 @@
             label4.TabIndex = 6;
             label4.Text = "Пароль";
             // 
+            // button3
+            // 
+            button3.Location = new Point(104, 241);
+            button3.Name = "button3";
+            button3.Size = new Size(67, 21);
+            button3.TabIndex = 7;
+            button3.Text = "Выйти";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Authorization
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(287, 274);
+            Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -141,5 +153,6 @@
         private TextBox textBox2;
         private Label label3;
         private Label label4;
+        private Button button3;
     }
 }
