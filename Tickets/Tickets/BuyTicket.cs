@@ -18,15 +18,13 @@ namespace Tickets
     public partial class BuyTicket : Form
     {
         string SQLconnect = "server = localhost; port=3306; userid=root; password=t9qd9jqs; database=train_tickets_sokolov; sslmode=none; charset=utf8 ";
-        string search = "name";
+        string search;
         int userId;
         public BuyTicket()
         {
             InitializeComponent();
             fillCombo();
             get_reis();
-            Main a = new Main(userId);
-            a.AuthoHide();
         }
         void get_reis()
         {
@@ -78,7 +76,7 @@ namespace Tickets
             }
             catch (Exception)
             {
-                Console.WriteLine("Unable to load data from database");
+
             }
         }
         void setSearch()
@@ -93,9 +91,19 @@ namespace Tickets
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            NewTicket pick = new NewTicket();
+            NewTicket pick = new NewTicket(dataGridView1.SelectedRows[0].Cells[0].Value);
             this.Hide();
+            if (pick.ShowDialog() == DialogResult.OK)
+            {
+                get_reis();
+            }
             pick.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

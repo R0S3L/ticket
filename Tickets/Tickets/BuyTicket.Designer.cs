@@ -33,6 +33,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             comboBox1 = new ComboBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -40,10 +41,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 74);
+            dataGridView1.Location = new Point(12, 62);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(708, 392);
+            dataGridView1.Size = new Size(665, 392);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
             // 
@@ -86,11 +87,22 @@
             comboBox1.TabIndex = 5;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 460);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 23);
+            button1.TabIndex = 6;
+            button1.Text = "Вернутся назад";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // BuyTicket
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(734, 478);
+            ClientSize = new Size(690, 488);
+            Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -111,5 +123,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private ComboBox comboBox1;
+        private Button button1;
     }
 }

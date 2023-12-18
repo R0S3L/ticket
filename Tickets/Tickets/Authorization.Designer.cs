@@ -137,7 +137,7 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Authorization";
-            Text = "Form1";
+            Text = "Авторизация";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

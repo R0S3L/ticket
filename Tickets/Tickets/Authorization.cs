@@ -35,10 +35,12 @@ namespace Tickets
                 if (Dr.HasRows == true)
                 {
                     Main mn = new Main(Convert.ToInt32(Dr["iduser"]));
-                    con1.Close();
-                    Hide();
-                    mn.ShowDialog();
-                    Show();
+                    this.Hide();
+                    if (mn.ShowDialog() == DialogResult.OK)
+                    {
+                        Enter_User();
+                    }
+                    mn.Show();
                     break;
                 }
                 else

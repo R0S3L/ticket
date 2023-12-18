@@ -17,7 +17,6 @@ namespace Tickets
             this.userId = userId;
             get_data();
             get_info();
-            AuthoHide();
         }
         void get_info()
         {
@@ -88,11 +87,6 @@ namespace Tickets
             dataGridView1.Columns["ФИО"].DisplayIndex = 2;
             con1.Close();
         }
-        public void AuthoHide()
-        {
-            Authorization cl = new Authorization(userId);
-            cl.Hide();
-        }
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -138,6 +132,8 @@ namespace Tickets
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Authorization ex = new Authorization(userId);
+            ex.Show();
             this.Close();
         }
 
@@ -180,6 +176,11 @@ namespace Tickets
         {
             BuyTicket buy = new BuyTicket();
             this.Hide();
+            this.Close();
+            if (buy.ShowDialog() == DialogResult.OK)
+            {
+                get_data();
+            }
             buy.Show();
         }
     }
